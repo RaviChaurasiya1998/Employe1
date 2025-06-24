@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <div class="input-group mb-3">
+    <input [(ngModel)]="deptId" class="form-control" placeholder="Enter Department ID" />
+    <button (click)="search()" class="btn btn-primary">Search</button>
+  </div>
+
+  <table class="table table-bordered" *ngIf="employees.length">
+    <thead>
+      <tr><th>ID</th><th>Name</th><th>Position</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees" (click)="viewEmployee(emp.id)" style="cursor: pointer;">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.position }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
